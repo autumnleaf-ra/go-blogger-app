@@ -5,14 +5,14 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func IsAuthenticate(c *fiber.Ctx) {
+func IsAuthenticate(c *fiber.Ctx) error {
 	cookie := c.Cookies("jwt")
 
 	if _, err := util.ParseJWT(cookie); err != nil {
 		c.Status(fiber.StatusUnauthorized)
-		c.JSON(fiber.Map{
+		return c.JSON(fiber.Map{
 			"message": "unauthenticated",
 		})
 	}
-	c.Next()
+	return c.Next()
 }

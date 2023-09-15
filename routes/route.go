@@ -2,6 +2,7 @@ package routes
 
 import (
 	"github.com/autumnleaf-ra/go-blogger-app/controller"
+	"github.com/autumnleaf-ra/go-blogger-app/middleware"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -9,5 +10,14 @@ import (
 func Setup(app *fiber.App) {
 	app.Post("/api/register", controller.Register)
 	app.Post("/api/login", controller.Login)
-	// app.Use(middleware.IsAuthenticate)
+
+	app.Use(middleware.IsAuthenticate)
+	app.Post("/api/post", controller.CreatePost)
+	app.Get("/api/allpost", controller.AllPost)
+	app.Get("/api/allpost/:id", controller.DetailPost)
+	app.Put("/api/updatepost/:id", controller.UpdatePost)
+	app.Get("/api/uniquepost", controller.UniquePost)
+	app.Delete("/api/deletepost/:id", controller.DeletePost)
+	app.Post("/api/upload-image", controller.Upload)
+	app.Static("/api/uploads", "./uploads")
 }

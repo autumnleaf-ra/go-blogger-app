@@ -11,6 +11,7 @@ import (
 	"github.com/autumnleaf-ra/go-blogger-app/database"
 	"github.com/autumnleaf-ra/go-blogger-app/models"
 	"github.com/autumnleaf-ra/go-blogger-app/util"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -105,4 +106,8 @@ func Login(c *fiber.Ctx) error {
 	// if success
 	return c.JSON(fiber.Map{
 		"message": "Successfully login"})
+}
+
+type Claims struct {
+	jwt.StandardClaims
 }
