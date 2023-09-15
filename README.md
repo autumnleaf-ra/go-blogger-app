@@ -9,9 +9,7 @@ This is the backend REST API for a blog site, developed using Go and the Fiber w
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
+- [Deploy-API](#deploy-api)
 
 ## Introduction
 
@@ -40,3 +38,21 @@ Before you begin, ensure you have met the following requirements:
 
    ```bash
    git clone https://github.com/autumnleaf-ra/go-blogger-app.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd blog-site-backend
+3. Install dependencies:
+   ```bash
+   go mod tidy
+4. Set up your configuration by creating an .env file with your environment-specific values.
+5. Run the application
+   ```bash
+   go run main.go
+   
+## Usage
+Visit http://localhost:your-port in your web browser or use a tool like Postman to interact with the API endpoints.
+
+## Deploy-API
+```bash
+https://go-blogsite-api-ec193e4abeb7.herokuapp.com/
