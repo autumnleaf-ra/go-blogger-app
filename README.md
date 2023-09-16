@@ -1,6 +1,6 @@
 # Blog Site Backend API
 
-This is the backend REST API for a blog site, developed using Go and the Fiber web framework.
+This is the backend REST API for a blog site, developed using Go and the Fiber web framework and JWT Auth.
 
 ## Table of Contents
 
@@ -22,6 +22,7 @@ This repository contains the source code for the backend of a blog site. It prov
 - CRUD operations for user accounts.
 - Secure and efficient handling of data using the Fiber framework.
 - RESTful API design.
+- Secure API with JWT Auth.
 
 ## Prerequisites
 
